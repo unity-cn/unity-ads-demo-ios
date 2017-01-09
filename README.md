@@ -91,8 +91,20 @@ Unity Ads提供给开发者2种方式设置测试广告.
 由于本地区填充率问题, 或者看完24小时内的所有25次广告等原因, 返回如上`no fill`的log, 则就是没有填充了. 没有填充大部分时候都是正常情况, 如果您认为可能有问题的话, 请查看上边***<只能看到很少的几个广告, 看不到期望那么多的广告>*** 条目, 如果仍存在问题的话, 可以从dashboard右下角联络Unity技术支持. 
 
 
-## 三部分. API的具体行为
-API文档在如下的位置[Android](https://github.com/unity-cn/unityads-help-cn/wiki/chinese_sdk_android_api_reference), [iOS](https://github.com/unity-cn/unityads-help-cn/wiki/chinese_sdk_ios_api_reference)
+## 三部分. API的具体行为和使用方法
+API文档在如下的位置
+#### iOS API 文档
+* [UnityAds 和 UnityAdsDelegate](chinese_sdk_ios_api_reference)
+* [UnityAdsPlacementState](chinese_sdk_ios_api_placementstates)
+* [UnityAdsFinishState](chinese_sdk_ios_api_finishstates)
+* [UnityAdsError](chinese_sdk_ios_api_errors)
+
+#### Android API 文档
+* [UnityAds 和 IUnityAdsListener](chinese_sdk_android_api_reference)
+* [UnityAds.PlacementState](chinese_sdk_android_api_placementstates)
+* [UnityAds.FinishState](chinese_sdk_android_api_finishstates)
+* [UnityAds.UnityAdsError](chinese_sdk_android_api_errors)
+
 
 
 
