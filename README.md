@@ -106,28 +106,40 @@ API文档在如下的位置
 * [UnityAds.UnityAdsError](https://github.com/unity-cn/unityads-help-cn/wiki/chinese_sdk_android_api_errors)
 
 #### 1. 初始化
+```
+UnityAds.initialize("1207443", delegate: self)
+```
+在初始化的时候需要传入gameid, 一串数字的字符串, 和处理回调的delegate. 需要注意的几点是, <br>1) Unity Ads并不支持多次初始化, 并且没有停止选项, 所以一旦初始化后, Unity Ads在本次Game session就会一直开着. 所以请注意即使您有中途重新拉取的需求, Unity Ads目前也是没有相关API支持的, 您只能把重新抓取等工作都交给Unity.<br>2) 虽然API中delegate允许传入空值, 但如果在初始化Unity Ads的时候传入nil的话, 它是会出错的, 所以请注意, 即使临时把AppDelegate设置成delegate, 也不要在初始化的时候传入空值.<br>3) 由于Unity Ads不支持多次初始化, 所以如果您不能在AppDelegate的应用开启方法中进行初始化的话, 请您一定要确保自己所写的逻辑, 只初始化了1次Unity Ads, 进行多次初始化可能会导致Unity Ads的无法正常工作. 
 
 
 #### 2. 设置回调监听器
-
+除了在初始化的时候传入delegate, 开发者也可以更换Unity Ads的delegate. 比如在本例子中, 由于必须在AppDelegate传入delegate, 所以在后边真的要作为delegate的ViewController必须在初始化后重新被设为Unity Ads的delegate`UnityAds.setDelegate(self)`.
 
 #### 3. 判断是否可以展示广告了
+Unity Ads有3个与"准备好"相关的方法. 
 
+* 如果想要确保接下来可以展示广告的话, 需要使用"成功初始化"与"广告准备好"2个方法`UnityAds.isInitialized() && UnityAds.isReady(usingPlacement)`. 
+* 除了上面这2个方法外, 在`UnityAdsDelegate`中也有一个`unityAdsReady`回调. 这个回调会在每次视频ready的时候被调用一次,  所以它可以用作对video的计数. 但它被调用的时机并不是下一个广告准备好的的时候, 所以不能使用这个回调来检查是否广告ready. 如果这个回调很早(比如上次视频播放中)被调用了, 而开发者在视频播放完后却还在等待这个回调, 来更新用户提示状态的话, 那就会造成逻辑错误了. 
 
 
 #### 4. unityAdsReady 回调
+在每次有视频下载好的时候, 这个回调会被调用一次. 但视频并不总是在上一个播完才开始下载下一个. 所以这个方法被调用的时机可能并不会让开发者有机会很方便的使用. 只能用作计数之类的.
 #### 5. unityAdsDidStart 回调
+在视频开始播放的时候, 这个回调会被调用到. 
 #### 6. unityAdsDidFinish 回调
+广告被关闭的时候被调用. 对于任何一个show的调用, 都会对应一个unityAdsDidFinish, 即便是错误的情况也不例外. 所以这个回调方法会传入一个`UnityAdsFinishState`参数, 从这个参数中能够获得结束的状态, 判断视频是否被跳过, 以及是否发生了错误等.
 #### 7. unityAdsDidError 回调
-
+除了会打印错误日志(error log)之外, 在发生错误的时候, 这个方法也会被调用. 这个方法可以辅助用于调试, 也可以用于统计错误数据用于分析排查问题. 与`unityAdsDidFinish `的不同之处在于, `unityAdsDidError`回调会传入一个`UnityAdsError`, 并且调用时机可能会不同.
 
 ## 四部分. 集成时候, 代码层面要注意些什么?
-1. 如何设计奖励视频广告的游戏功能? -- 没有准备好时不要给玩家机会来点.
-2. 应该何时初始化? 
-3. 注意有没有开启break on exception
-4. 应该如何检查广告才是正确的"可以展示"?
-5. 为什么测着测着就没广告可看了?
-6. 
+#### 1. 如何设计奖励视频广告的游戏功能? -- 没有准备好时不要给玩家机会来点.
+
+
+#### 2. 应该何时初始化? 
+#### 3. 注意有没有开启break on exception
+#### 4. 应该如何检查广告才是正确的"可以展示"?
+#### 5. 为什么测着测着就没广告可看了?
+
 
 ## 五部分. 遇到Unity Ads的bug怎么办?
 1. 先看是不是自己集成逻辑的问题, 查看本示例项目是否也有您所发现的bug
@@ -146,3 +158,4 @@ API文档在如下的位置
 
 ## 七部分. 其他问题
 1. 应该给多少奖励?
+2. 为什么总是显示同一个广告?
