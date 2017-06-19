@@ -8,6 +8,7 @@
 
 import UIKit
 import UnityAds
+import AdSupport
 
 class ViewController: GameViewController {
 
@@ -15,9 +16,11 @@ class ViewController: GameViewController {
     @IBOutlet weak var messageView: UITextView!
     @IBOutlet weak var coinsLabel: UILabel!
     @IBOutlet weak var viewAdsButton: UIButton!
+    @IBOutlet weak var gameIdLabel: UILabel!
+    @IBOutlet weak var placementIdLabel: UILabel!
     
     // game logic property
-    let usingPlacement = Values.skippablePlacementId
+    let usingPlacement = Values.usingPlacement
     var frames = 0
     let checkAvailabilityInterval = 30
     var coins = 0
@@ -25,8 +28,15 @@ class ViewController: GameViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UnityAds.setDebugMode(Values.debugMode)
         UnityAds.setDelegate(self)
+        gameIdLabel.text = Values.gameId
+        placementIdLabel.text = usingPlacement
         self.viewAdsButton.titleLabel?.textAlignment = NSTextAlignment.center
+        let idfaString = ASIdentifierManager.shared().advertisingIdentifier.uuidString
+        print("idfa = " + idfaString)
+//        [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 

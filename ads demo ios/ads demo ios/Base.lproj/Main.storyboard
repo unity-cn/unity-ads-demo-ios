@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5H-wY-6Kd">
-                                <rect key="frame" x="88" y="461.5" width="200" height="30"/>
+                                <rect key="frame" x="88" y="440.5" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="FWl-1h-2SM"/>
                                 </constraints>
@@ -46,20 +46,38 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2m-8i-ao5" userLabel="GameIdLabel">
+                                <rect key="frame" x="157.5" y="415" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H53-Xe-wvm" userLabel="PlacementId">
+                                <rect key="frame" x="177.5" y="405" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="H53-Xe-wvm" firstAttribute="leading" secondItem="T2m-8i-ao5" secondAttribute="trailing" constant="20" id="CrV-WH-KFV"/>
+                            <constraint firstItem="T2m-8i-ao5" firstAttribute="top" secondItem="AjW-dm-X6b" secondAttribute="bottom" constant="18.5" id="EsM-6z-icn"/>
                             <constraint firstItem="B5H-wY-6Kd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ICo-D7-v3l"/>
-                            <constraint firstItem="B5H-wY-6Kd" firstAttribute="top" secondItem="AjW-dm-X6b" secondAttribute="bottom" constant="65" id="VFf-Kb-bJt"/>
+                            <constraint firstItem="T2m-8i-ao5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-30" id="Ptk-mV-Cey"/>
                             <constraint firstItem="AjW-dm-X6b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YYf-y2-ScN"/>
+                            <constraint firstItem="B5H-wY-6Kd" firstAttribute="top" secondItem="T2m-8i-ao5" secondAttribute="bottom" constant="25.5" id="a8x-xH-5XO"/>
                             <constraint firstItem="oFw-yd-g8I" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cGv-Qp-3hL"/>
                             <constraint firstItem="oFw-yd-g8I" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-120" id="gjC-Kw-xaC"/>
                             <constraint firstItem="AjW-dm-X6b" firstAttribute="top" secondItem="oFw-yd-g8I" secondAttribute="bottom" constant="98" id="r79-YQ-s7Y"/>
+                            <constraint firstItem="H53-Xe-wvm" firstAttribute="centerY" secondItem="T2m-8i-ao5" secondAttribute="centerY" id="wPb-ew-8jN"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="coinsLabel" destination="AjW-dm-X6b" id="dg4-6u-k1G"/>
+                        <outlet property="gameIdLabel" destination="T2m-8i-ao5" id="EVE-bW-fqy"/>
                         <outlet property="messageView" destination="oFw-yd-g8I" id="JPF-mC-V5F"/>
+                        <outlet property="placementIdLabel" destination="H53-Xe-wvm" id="Y4K-or-eMc"/>
                         <outlet property="viewAdsButton" destination="B5H-wY-6Kd" id="JAY-XL-H3W"/>
                     </connections>
                 </viewController>
