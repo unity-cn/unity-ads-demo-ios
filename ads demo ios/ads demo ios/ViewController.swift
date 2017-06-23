@@ -19,6 +19,7 @@ class ViewController: GameViewController {
     @IBOutlet weak var gameIdLabel: UILabel!
     @IBOutlet weak var placementIdLabel: UILabel!
     
+    
     // game logic property
     let usingPlacement = Values.usingPlacement
     var frames = 0
@@ -77,7 +78,6 @@ class ViewController: GameViewController {
             UnityAds.show(self, placementId: usingPlacement)
         }
     }
-    
 }
 
 
