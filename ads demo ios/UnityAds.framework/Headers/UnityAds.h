@@ -2,6 +2,28 @@
 
 #import <UnityAds/UADSMediationMetaData.h>
 #import <UnityAds/UADSPlayerMetaData.h>
+#import <UnityAds/UADSInAppPurchaseMetaData.h>
+#import <UnityAds/UnityServices.h>
+#import "UADSBanner.h"
+#import "UADSPurchasing.h"
+#import "UANAApiAnalytics.h"
+#import "UMONPlacementContent.h"
+#import "UMONPromoMetaData.h"
+#import "UMONRewardablePlacementContent.h"
+#import "UPURProduct.h"
+#import "UPURTransactionDetails.h"
+#import "UPURTransactionError.h"
+#import "UPURTransactionErrorDetails.h"
+#import "UPURStore.h"
+#import "USRVUnityPurchasing.h"
+#import "UnityAnalytics.h"
+#import "UnityAnalyticsAcquisitionType.h"
+#import "UnityMonetizationDelegate.h"
+#import "UnityAdsFinishState.h"
+#import "UMONShowAdPlacementContent.h"
+#import "UMONPromoAdPlacementContent.h"
+#import "UMONNativePromoAdapter.h"
+#import "UnityMonetization.h"
 
 /**
  *  An enumerate that describes the state of `UnityAds` placements. 
@@ -30,24 +52,6 @@ typedef NS_ENUM(NSInteger, UnityAdsPlacementState) {
      *  A state that indicates that the placement is properly configured, but there are currently no ads available for the placement.
      */
     kUnityAdsPlacementStateNoFill
-};
-
-/**
- *  An enumeration for the completion state of an ad.
- */
-typedef NS_ENUM(NSInteger, UnityAdsFinishState) {
-    /**
-     *  A state that indicates that the ad did not successfully display.
-     */
-    kUnityAdsFinishStateError,
-    /**
-     *  A state that indicates that the user skipped the ad.
-     */
-    kUnityAdsFinishStateSkipped,
-    /**
-     *  A state that indicates that the ad was played entirely.
-     */
-    kUnityAdsFinishStateCompleted
 };
 
 /**
@@ -252,4 +256,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (BOOL)isInitialized;
 
 @end
+
+@interface UnityServicesListener : NSObject <UnityServicesDelegate>
+@end
+
 NS_ASSUME_NONNULL_END

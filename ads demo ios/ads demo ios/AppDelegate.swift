@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import UnityAds
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        UnityAds.initialize(Values.gameId, delegate: self, testMode: Values.testMode)
         return true
     }
 
@@ -46,21 +44,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
-extension AppDelegate: UnityAdsDelegate {
-    func unityAdsReady(_ placementId: String) {
-        print("[AppDelegate] unityAdsReady, placementId=" + placementId)
-    }
-    
-    func unityAdsDidStart(_ placementId: String) {
-        print("[AppDelegate] unityAdsDidStart, placementId=" + placementId)
-    }
-    
-    func unityAdsDidFinish(_ placementId: String, with state: UnityAdsFinishState) {
-        print("[AppDelegate] unityAdsDidFinish, placementId=" + placementId)
-    }
-    
-    func unityAdsDidError(_ error: UnityAdsError, withMessage message: String) {
-        print("[AppDelegate] unityAdsDidError, errorMessage=" + message)
-    }
-}
 

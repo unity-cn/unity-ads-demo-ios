@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		371B56D31ED2D9B1001D4433 /* UnityAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371B56D21ED2D9B1001D4433 /* UnityAds.framework */; };
+		231250A42182F61F000C9D42 /* UnityAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 231250A32182F61F000C9D42 /* UnityAds.framework */; };
 		37E70C6B1E1CE47200CBECB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E70C6A1E1CE47200CBECB8 /* AppDelegate.swift */; };
 		37E70C6D1E1CE47200CBECB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E70C6C1E1CE47200CBECB8 /* ViewController.swift */; };
 		37E70C701E1CE47200CBECB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E70C6E1E1CE47200CBECB8 /* Main.storyboard */; };
@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		371B56D21ED2D9B1001D4433 /* UnityAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnityAds.framework; sourceTree = "<group>"; };
+		231250A32182F61F000C9D42 /* UnityAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnityAds.framework; sourceTree = "<group>"; };
 		37E70C671E1CE47200CBECB8 /* ads demo ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ads demo ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37E70C6A1E1CE47200CBECB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37E70C6C1E1CE47200CBECB8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,19 +35,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				371B56D31ED2D9B1001D4433 /* UnityAds.framework in Frameworks */,
+				231250A42182F61F000C9D42 /* UnityAds.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		231250A22182F61F000C9D42 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				231250A32182F61F000C9D42 /* UnityAds.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		37E70C5E1E1CE47200CBECB8 = {
 			isa = PBXGroup;
 			children = (
-				371B56D21ED2D9B1001D4433 /* UnityAds.framework */,
 				37E70C691E1CE47200CBECB8 /* ads demo ios */,
 				37E70C681E1CE47200CBECB8 /* Products */,
+				231250A22182F61F000C9D42 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,7 +114,7 @@
 				TargetAttributes = {
 					37E70C661E1CE47200CBECB8 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 8HXJ335URE;
+						DevelopmentTeam = 3XGDM87KDL;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -202,6 +210,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -252,6 +261,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -273,10 +283,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8HXJ335URE;
+				DEVELOPMENT_TEAM = 3XGDM87KDL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(SRCROOT)/**",
 				);
 				INFOPLIST_FILE = "ads demo ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -290,10 +301,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8HXJ335URE;
+				DEVELOPMENT_TEAM = 3XGDM87KDL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(SRCROOT)/**",
 				);
 				INFOPLIST_FILE = "ads demo ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

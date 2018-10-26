@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,19 +27,20 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="FWl-1h-2SM"/>
                                 </constraints>
+                                <state key="normal" title="ShowRewardedVideo"/>
                                 <connections>
                                     <action selector="viewAdsButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cpj-2m-wNE"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AjW-dm-X6b">
-                                <rect key="frame" x="182" y="375.5" width="11" height="21"/>
+                                <rect key="frame" x="182" y="376" width="11" height="21"/>
                                 <color key="backgroundColor" red="0.5" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oFw-yd-g8I">
-                                <rect key="frame" x="37" y="149.5" width="300" height="128"/>
+                                <rect key="frame" x="37" y="150" width="300" height="128"/>
                                 <color key="backgroundColor" red="1" green="0.90033637152777779" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="cgh-V1-ls6"/>
@@ -49,19 +50,30 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gameid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2m-8i-ao5" userLabel="GameIdLabel">
-                                <rect key="frame" x="129" y="415" width="57" height="20.5"/>
+                                <rect key="frame" x="129" y="415" width="57" height="21"/>
                                 <color key="backgroundColor" red="1" green="0.90033637152777779" blue="0.81287977430555558" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H53-Xe-wvm" userLabel="PlacementId">
-                                <rect key="frame" x="206" y="415.5" width="42" height="21"/>
+                                <rect key="frame" x="206" y="415" width="42" height="21"/>
                                 <color key="backgroundColor" red="0.85882352941176465" green="0.75472005208333337" blue="0.81287977430555558" alpha="0.60364940068493156" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0iN-Ni-P1g" userLabel="ShowBanner">
+                                <rect key="frame" x="87" y="507" width="200" height="30"/>
+                                <color key="backgroundColor" red="0.85882352939999995" green="0.87529839409999999" blue="0.96256510419999997" alpha="0.60364940069999995" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="SNN-A2-PCB"/>
+                                </constraints>
+                                <state key="normal" title="ShowBanner"/>
+                                <connections>
+                                    <action selector="showBannerButtonTappedWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eGx-Cq-rW9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -69,9 +81,11 @@
                             <constraint firstItem="T2m-8i-ao5" firstAttribute="top" secondItem="AjW-dm-X6b" secondAttribute="bottom" constant="18.5" id="EsM-6z-icn"/>
                             <constraint firstItem="B5H-wY-6Kd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ICo-D7-v3l"/>
                             <constraint firstItem="T2m-8i-ao5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-30" id="Ptk-mV-Cey"/>
+                            <constraint firstItem="0iN-Ni-P1g" firstAttribute="centerX" secondItem="AjW-dm-X6b" secondAttribute="centerX" id="Sfv-p6-ObF"/>
                             <constraint firstItem="AjW-dm-X6b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YYf-y2-ScN"/>
                             <constraint firstItem="B5H-wY-6Kd" firstAttribute="top" secondItem="T2m-8i-ao5" secondAttribute="bottom" constant="25.5" id="a8x-xH-5XO"/>
                             <constraint firstItem="oFw-yd-g8I" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cGv-Qp-3hL"/>
+                            <constraint firstItem="0iN-Ni-P1g" firstAttribute="top" secondItem="B5H-wY-6Kd" secondAttribute="bottom" constant="16" id="g6k-dr-AYm"/>
                             <constraint firstItem="oFw-yd-g8I" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-120" id="gjC-Kw-xaC"/>
                             <constraint firstItem="AjW-dm-X6b" firstAttribute="top" secondItem="oFw-yd-g8I" secondAttribute="bottom" constant="98" id="r79-YQ-s7Y"/>
                             <constraint firstItem="H53-Xe-wvm" firstAttribute="centerY" secondItem="T2m-8i-ao5" secondAttribute="centerY" id="wPb-ew-8jN"/>
@@ -82,6 +96,7 @@
                         <outlet property="gameIdLabel" destination="T2m-8i-ao5" id="EVE-bW-fqy"/>
                         <outlet property="messageView" destination="oFw-yd-g8I" id="JPF-mC-V5F"/>
                         <outlet property="placementIdLabel" destination="H53-Xe-wvm" id="Y4K-or-eMc"/>
+                        <outlet property="showBannerButton" destination="0iN-Ni-P1g" id="1gC-sA-TgU"/>
                         <outlet property="viewAdsButton" destination="B5H-wY-6Kd" id="JAY-XL-H3W"/>
                     </connections>
                 </viewController>
